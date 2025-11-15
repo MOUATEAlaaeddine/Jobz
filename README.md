@@ -3,6 +3,7 @@ A .NET 7 Web API for managing job offers, candidates, companies, and application
 
 📋 Prerequisites (macOS)
 
+
 .NET 7 SDK - Download here
 Visual Studio for Mac or VS Code
 Git
@@ -11,43 +12,54 @@ Check your .NET version:
 bashdotnet --version
 # Should show 7.x.x
 
+
 🔧 Setup Instructions
+
+
 1️⃣ Clone the Repository
 bashgit clone https://github.com/MOUATEAlaaeddine/Jobz.git
 cd Jobz
+
+
 2️⃣ Restore Dependencies
 bashdotnet restore
+
+
+
 3️⃣ Update Database (after migrations are added)
 bashdotnet ef database update
+
+
 4️⃣ Run the API
 bashdotnet run
 The API will start at: http://localhost:5000 or https://localhost:5001
 
-🗂️ Project Structure
-Jobz/
-├── Data/
-│   ├── Entities/        # Domain models
-│   ├── Enums/          # Enumerations
-│   └── JobzDbContext.cs # EF Core context
-├── DTOs/               # Data Transfer Objects
-├── Controllers/        # API endpoints
-├── Migrations/         # EF Core migrations
-└── Tests/             # Unit & integration tests
 
 🧪 Testing the API
+
 Example: Create a Candidate
+
 bashcurl -X POST http://localhost:5000/api/candidats \
+
+
   -H "Content-Type: application/json" \
-  -d '{
-    "nom": "Mouate",
-    "prenom": "Alaaeddine",
-    "email": "alaa@example.com",
-    "telephone": "+212600000000"
+
+  
+  -d '{"nom": "Mouate","prenom": "Alaaeddine","email": "alaa@example.com","telephone": "+212600000000"
+
+  
   }'
+  
 Example: Get All Job Offers
+
 bashcurl http://localhost:5000/api/offres
 
+
+
+
 🛠️ Development Commands
+
+
 Build the project
 bashdotnet build
 Run tests
@@ -60,13 +72,16 @@ Clean build artifacts
 bashdotnet clean
 rm -rf bin obj
 
+
 📦 Technologies Used
+
 
 .NET 7 - Framework
 ASP.NET Core Web API - REST API
 Entity Framework Core - ORM
 SQLite - Database (development)
 xUnit - Testing (coming soon)
+
 
 
 🌿 Git Workflow
